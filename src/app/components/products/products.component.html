@@ -1,0 +1,39 @@
+<div class="container"
+    fxLayout
+>
+
+    <app-side-filter
+        [categories]="categories"
+        (setCategoryEvent)="setCategory($event)"
+        (setPriceSortEvent)="setPriceSort($event)"
+        (setRatingSortEvent)="setRatingSort($event)"
+    ></app-side-filter>
+
+    <div class="products">
+        <div *ngIf="!loading" class="products-list" fxLayout >
+            <app-product-card 
+                *ngFor="let product of products[selectedPage]"
+                [product]="product"
+            ></app-product-card>
+        </div>
+        
+        <div class="loading" *ngIf="loading">
+            <p>Loading...</p>
+        </div>
+        
+        <div
+            class="navigation"
+            fxLayout
+            fxLayoutAlign="center"
+        >
+            <button 
+                *ngFor="let page of products; let i = index" 
+                class="navigationBtn" 
+                (click)="setPage( i )" 
+            >
+            {{ i+1 }}
+            </button>
+        </div>
+    </div>
+
+</div>

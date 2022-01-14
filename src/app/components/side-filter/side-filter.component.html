@@ -1,0 +1,51 @@
+<div class="side-filter">
+    <div>
+        <p
+            (click)="toggleCategories()"
+        >Categories  {{ showCategories ? '-' : '+' }}</p>
+        <ul *ngIf="showCategories" >
+            <li 
+                *ngFor="let category of categories" 
+                class="side-filter-btn"
+                (click)="setCategory(category)"
+                [ngClass]="selectedCategory === category ? 'selected' : ''"
+            >
+                {{ category }}
+            </li>
+        </ul>
+    </div>
+    <div>
+        <p>Sort by price</p>
+        <ul>
+            <li 
+                class="side-filter-btn"
+                (click)="setPriceSort('asc')"
+                [ngClass]="selectedPriceSort === 'asc' ? 'selected' : ''"
+
+            >Ascending</li>
+            <li 
+                class="side-filter-btn" 
+                (click)="setPriceSort('desc')" 
+                [ngClass]="selectedPriceSort === 'desc' ? 'selected' : ''"
+
+            >Descending</li>
+        </ul>
+    </div>
+    <div>
+        <p>Sort by rating</p>
+        <ul>
+            <li 
+                class="side-filter-btn"
+                (click)="setRatingSort('asc')"
+                [ngClass]="selectedRatingSort === 'asc' ? 'selected' : ''"
+
+            >Accending</li>
+            <li 
+                class="side-filter-btn"
+                (click)="setRatingSort('desc')" 
+                [ngClass]="selectedRatingSort === 'desc' ? 'selected' : ''"
+
+            >Descending</li>
+        </ul>
+    </div>
+</div>

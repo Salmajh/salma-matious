@@ -1,0 +1,40 @@
+.side-filter {
+    margin: 5px;
+    margin-right: 1rem;
+    padding: 1rem;
+    border: 1px solid rgba(0,0,0,.1);
+    border-radius: 7px;
+    width: 200px;
+
+}
+
+.side-filter div {
+    margin-bottom: 1rem;
+}
+
+.side-filter div > p {
+    font-weight: 700;
+    cursor: pointer;
+}
+
+ul {
+    /* background-color: gray; */
+    width: 100%;
+    list-style: none;
+    padding: 5px;
+}
+
+.side-filter-btn {
+    width: 100%;
+}
+
+.side-filter-btn:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.selected {
+    color:salmon;
+}
